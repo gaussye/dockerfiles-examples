@@ -1,0 +1,11 @@
+FROM public.ecr.aws/amazonlinux/amazonlinux:latest
+ENV container docker
+USER root
+VOLUME [ "/sys/fs/cgroup" ]
+
+#1 install software
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+RUN yum install -y httpd net-tools 
+
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
