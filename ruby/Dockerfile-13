@@ -8,7 +8,7 @@ RUN \
   cd ${APP_ROOT} && \
   /bin/bash -c -l 'bundle install'
 
-COPY start.sh start.sh
+COPY start-rb.sh start-rb.sh
 
 VOLUME ["$APP_ROOT"]
 
